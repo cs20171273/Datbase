@@ -1,0 +1,29 @@
+.menubar {
+    height: 70px;
+    width: 100%;
+}
+
+.menubar ul li {
+    list-style: none;
+    color: white;
+    background-color: #1B682C;
+    float: left;
+    line-height: 70px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.menubar.menuLink {
+    text-decoration:none;
+    color: white;
+    display: block;
+    width: 150px;
+    font-size: 12px;
+}
+
+.menubar.menuLink:hover{
+    color: #1B682C;
+    background-color: white;
+}
+
+
