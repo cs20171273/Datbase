@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<style>
+    #select1 {
+        width:250px;
+        height: 60px;
+        padding:5px;
+        border:2px solid black;
+        border-radius:7px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance : none;
+    }
+
+    #input1 {
+    	width: 250px;
+        height: 60px;
+        border: 2px solid black;
+        font-size: 20px;
+        border-radius: 7px;
+    }
+    #input2 {
+    	width: 300px;
+        height: 55px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom : 3px solid #1B682C;
+    }
+    #jb-container {
+        margin: 10px auto;
+        padding: 10px;
+        width: 100%;
+        border: 1px solid #1B682C;
+    }
+    #jb-menubar {
+        position: absolute;
+        top: 0px;
+        left: 685px;
+    }
+    #menubar {
+        height: 50px;
+        width: 100%;
+        
+    }
+
+    #menubar ul li {
+        list-style: none;
+        color: white;
+        float: left;
+        line-height: 50px;
+        vertical-align: middle;
+        text-align: center;
+        
+    }
+
+    #menubar .menuLink {
+        text-decoration:none;
+        color: white;
+        display: block;
+        width: 150px;
+        font-size: 20px;
+    }
+
+    #menubar .menuLink:hover{
+        color: black;
+        background-color: white;
+    }
+
+    .menubutton:hover {
+	    color: rgba(30, 22, 54, 0.6);
+	    box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
+        width: 150px;
+        height: 55px;
+        font-size: 20px;
+    }
+    
+    .menubutton2:hover {
+	    color: rgba(30, 22, 54, 0.6);
+	    box-shadow: rgba(112, 112, 112, 0.4) 0 0px 0px 2px inset;
+        width: 150px;
+        height: 55px;
+        font-size: 20px;
+    }
+
+    .menubutton {
+	    color: rgba(255, 255, 255, 0.85);
+	    box-shadow: rgba(30, 22, 54, 0.7) 0 0px 0px 40px inset;
+        width: 150px;
+        height: 55px;
+        font-size: 20px;
+    }
+
+    .menubutton2 {
+	    color: rgba(255, 255, 255, 0.85);
+	    box-shadow: rgba(95, 0, 0, 0.7) 0 0px 0px 40px inset;
+        width: 150px;
+        height: 55px;
+        font-size: 20px;
+    }
+
+    .submitbutton {
+	    color: rgba(255, 255, 255, 0.85);
+	    box-shadow: rgba(30, 22, 54, 0.7) 0 0px 0px 40px inset;
+        width: 100px;
+        height: 30px;
+        font-size: 20px;
+    }
+
+    .submitbutton:hover {
+	    color: rgba(30, 22, 54, 0.6);
+	    box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
+        width: 100px;
+        height: 30px;
+        font-size: 20px;
+    }
+
+    table.type03 {
+        border-collapse: collapse;
+        text-align: center;
+        line-height: 1.5;
+        border-top: 1px solid #ccc;
+        border-left: 3px solid #1B682C;
+        margin : 20px 10px;
+        position: absolute;
+        left: 35%;
+        top: 30%;
+    }
+
+
+    table.type03 th {
+        width: 147px;
+        padding: 10px;
+        font-weight: bold;
+        vertical-align: center;
+        color: #1B682C;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+    }
+    table.type03 td {
+        width: 349px;
+        padding: 10px;
+        vertical-align: center;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+    }
+</style>
+
+<html>
+    <head>
+        <title>Forecast</title>
+        <style>
+            body {
+                height: 100vh;
+                background-image: url('/public/image/search_bg.png');
+                background-repeat : no-repeat;
+                background-size : cover;
+            }
+        </style>
+        <link href="menu.css" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+        <div id="jb-menubar">
+            <nav id="menubar">
+                <ul>
+                    <li>
+                        <form action="/semi_select" method="POST">
+                            <a class="menuLink">
+                                <button class = "menubutton" type="submit">Search</button>
+                            </a>
+                        </form>
+                    </li>
+                    <li>
+                        <form action="/semi_insert" method="POST">
+                            <a class="menuLink">
+                                <button class = "menubutton2" type="submit">Insert</button>
+                            </a>
+                        </form>
+                    </li>
+                    <li>
+                        <form action="/semi_us" method="POST">
+                            <a class="menuLink">
+                                <button class = "menubutton" type="submit">About Us</button>
+                            </a>
+                        </form>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <br>
+        <div style = "position: absolute; top: 160px; left: 770px; font-size: 40px; font: Comic Sans">
+            Insert Informations
+        </div>
+        <div style ="position: absolute; top:250px; left:700px">
+            <form action="/insert" method="POST">
+                <select name="local" id="select1">
+                    <option value="none">===Location===</option>
+                    <option value="105">Gangneung</option>
+                    <option value="259">Gangjingun</option>
+                    <option value="201">Ganghwa</option>
+                    <option value="294">Geoje</option>
+                    <option value="284">Geochang</option>
+                    <option value="283">Gyengju</option>
+                    <option value="185">Gosan</option>
+                    <option value="172">Gochang</option>
+                    <option value="251">Gochanggun</option>
+                    <option value="262">Goheung</option>
+                    <option value="116">Gwanaksan</option>
+                    <option value="266">Gwangyangsi</option>
+                    <option value="156">Gwangju</option>
+                    <option value="279">Gumi</option>
+                    <option value="140">Gunsan</option>
+                    <option value="238">Geumsan</option>
+                    <option value="253">Gimhaesi</option>
+                    <option value="247">Namwon</option>
+                    <option value="295">Namhae</option>
+                    <option value="100">Daegwanryeong</option>
+                    <option value="143">Daegu</option>
+                    <option value="133">Daejeon</option>
+                    <option value="98">Dongducheon</option>
+                    <option value="106">Donghae</option>
+                    <option value="165">Mokpo</option>
+                    <option value="164">Muan</option>
+                    <option value="273">Mungyeong</option>
+                    <option value="288">Milyang</option>
+                    <option value="102">Baekryeongdo</option>
+                    <option value="235">Boryeong</option>
+                    <option value="258">Boseonggun</option>
+                    <option value="226">Boeun</option>
+                    <option value="271">Bonghwa</option>
+                    <option value="159">Busan</option>
+                    <option value="243">Buahn</option>
+                    <option value="236">Buyeo</option>
+                    <option value="104">Bukgangneung</option>
+                    <option value="255">Bukchangwon</option>
+                    <option value="93">Bukchuncheon</option>
+                    <option value="289">Sancheong</option>
+                    <option value="214">Samcheok</option>
+                    <option value="137">Sangju</option>
+                    <option value="189">Seoguipo</option>
+                    <option value="129">Seosan</option>
+                    <option value="108">Seoul</option>
+                    <option value="188">Seongsan</option>
+                    <option value="265">Seongsanpo</option>
+                    <option value="239">Sejong</option>
+                    <option value="90">Sokcho</option>
+                    <option value="119">Suwon</option>
+                    <option value="254">Sunchanggun</option>
+                    <option value="174">Suncheon</option>
+                    <option value="136">Andong</option>
+                    <option value="257">Yangsansi</option>
+                    <option value="202">Yangpyeong</option>
+                    <option value="168">Yeosu</option>
+                    <option value="252">Yeonggwanggun</option>
+                    <option value="277">Yeongdeok</option>
+                    <option value="121">Yeongwol</option>
+                    <option value="272">Yeongju</option>
+                    <option value="281">Yeongcheon</option>
+                    <option value="170">Wando</option>
+                    <option value="115">Wooleungdo</option>
+                    <option value="152">Ulsan</option>
+                    <option value="130">Uljin</option>
+                    <option value="114">Wonju</option>
+                    <option value="263">Euiryeonggun</option>
+                    <option value="278">Euiseong</option>
+                    <option value="203">Icheon</option>
+                    <option value="211">Inje</option>
+                    <option value="112">Incheon</option>
+                    <option value="244">Imsil</option>
+                    <option value="248">Jangsu</option>
+                    <option value="260">Jangheung</option>
+                    <option value="146">Jeonju</option>
+                    <option value="217">Jeongseongun</option>
+                    <option value="245">Jeongeup</option>
+                    <option value="184">Jeju</option>
+                    <option value="221">Jecheon</option>
+                    <option value="256">Juahm</option>
+                    <option value="175">Jindo</option>
+                    <option value="268">Jindogun</option>
+                    <option value="192">Jinju</option>
+                    <option value="155">Changwon</option>
+                    <option value="232">Cheonahn</option>
+                    <option value="95">Cheolwon</option>
+                    <option value="276">Cheongsonggun</option>
+                    <option value="131">Cheongju</option>
+                    <option value="135">Chuphungryeong</option>
+                    <option value="101">Chuncheon</option>
+                    <option value="127">Chungju</option>
+                    <option value="216">Taebaek</option>
+                    <option value="162">Tongyeong</option>
+                    <option value="99">Paju</option>
+                    <option value="138">Pohang</option>
+                    <option value="264">Hamyanggun</option>
+                    <option value="285">Hapcheon</option>
+                    <option value="261">Haenam</option>
+                    <option value="177">Hongseong</option>
+                    <option value="212">Hongcheon</option>
+                    <option value="169">Heuksando</option>
+                </select>
+                &nbsp;
+                <input id="input1" type="text" placeholder="temp" name="temp"/>
+                <br>
+                <br>
+                <br>
+
+                <input id="input1" type="text" placeholder="year" name="year"/>
+                <input id="input1" type="text" placeholder="rain" name="rain"/>
+                <br>
+                <br>
+                <br>
+                <input id="input1" type="text" placeholder="month" name="month"/>
+                <input id="input1" type="text" placeholder="wind" name="wind"/>
+                <br>
+                <br>
+                <br>
+                <input id="input1" type="text" placeholder="day" name="day"/>
+                <input id="input1" type="text" placeholder="humidity" name="humi"/>
+                <br>
+                <br>
+                <br>
+                <input id="input1" type="text" placeholder="time" name="time"/>
+                <input id="input1" type="text" placeholder="snow" name="snow"/>
+                <br>
+                <br>
+
+                <button class="submitbutton" type="submit">Submit</button>
+                <br>
+                <br>
+            </form>
+        </div>
+    </body>
+</html>

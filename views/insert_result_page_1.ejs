@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<style>
+    #select1 {
+        width:500px;
+        height: 60px;
+        padding:5px;
+        border:2px solid black;
+        border-radius:7px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance : none;
+    }
+
+    #input1 {
+    	width: 500px;
+        height: 60px;
+        border: 2px solid black;
+        font-size: 20px;
+        border-radius: 7px;
+    }
+    #input2 {
+    	width: 300px;
+        height: 55px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom : 3px solid #1B682C;
+    }
+    #jb-container {
+        margin: 10px auto;
+        padding: 10px;
+        width: 100%;
+        border: 1px solid #1B682C;
+    }
+    #jb-menubar {
+        position: absolute;
+        top: 0px;
+        left: 685px;
+    }
+    #menubar {
+        height: 50px;
+        width: 100%;
+        
+    }
+
+    #menubar ul li {
+        list-style: none;
+        color: white;
+        float: left;
+        line-height: 50px;
+        vertical-align: middle;
+        text-align: center;
+        
+    }
+
+    #menubar .menuLink {
+        text-decoration:none;
+        color: white;
+        display: block;
+        width: 150px;
+        font-size: 20px;
+    }
+
+    #menubar .menuLink:hover{
+        color: black;
+        background-color: white;
+    }
+
+    .menubutton:hover {
+	    color: rgba(30, 22, 54, 0.6);
+	    box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
+        width: 150px;
+        height: 55px;
+        font-size: 20px;
+    }
+    
+    .menubutton2:hover {
+	    color: rgba(30, 22, 54, 0.6);
+	    box-shadow: rgba(112, 112, 112, 0.4) 0 0px 0px 2px inset;
+        width: 150px;
+        height: 55px;
+        font-size: 20px;
+    }
+
+    .menubutton {
+	    color: rgba(255, 255, 255, 0.85);
+	    box-shadow: rgba(30, 22, 54, 0.7) 0 0px 0px 40px inset;
+        width: 150px;
+        height: 55px;
+        font-size: 20px;
+    }
+
+    .menubutton2 {
+	    color: rgba(255, 255, 255, 0.85);
+	    box-shadow: rgba(95, 0, 0, 0.7) 0 0px 0px 40px inset;
+        width: 150px;
+        height: 55px;
+        font-size: 20px;
+    }
+
+    .submitbutton {
+	    color: rgba(255, 255, 255, 0.85);
+	    box-shadow: rgba(30, 22, 54, 0.7) 0 0px 0px 40px inset;
+        width: 100px;
+        height: 30px;
+        font-size: 20px;
+    }
+
+    .submitbutton:hover {
+	    color: rgba(30, 22, 54, 0.6);
+	    box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
+        width: 100px;
+        height: 30px;
+        font-size: 20px;
+    }
+
+    table.type03 {
+        border-collapse: collapse;
+        text-align: center;
+        line-height: 1.5;
+        border-top: 1px solid #ccc;
+        border-left: 3px solid #1B682C;
+        margin : 20px 10px;
+        position: absolute;
+        left: 35%;
+        top: 30%;
+    }
+
+
+    table.type03 th {
+        width: 147px;
+        padding: 10px;
+        font-weight: bold;
+        vertical-align: center;
+        color: #1B682C;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+    }
+    table.type03 td {
+        width: 349px;
+        padding: 10px;
+        vertical-align: center;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+    }
+
+    
+
+
+</style>
+
+<html>
+    <head>
+        <title>Forecast</title>
+        <style>
+            body {
+                height: 100vh;
+                background-image: url('/public/image/search_bg.png');
+                background-repeat : no-repeat;
+                background-size : cover;
+            }
+        </style>
+        <link href="menu.css" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+        <div id="jb-menubar">
+            <nav id="menubar">
+                <ul>
+                    <li>
+                        <form action="/not_select" method="POST">
+                            <a class="menuLink">
+                                <button class = "menubutton" type="submit">Search</button>
+                            </a>
+                        </form>
+                    </li>
+                    <li>
+                        <form action="/not_request" method="POST">
+                            <a class="menuLink">
+                                <button class = "menubutton2" type="submit">Request</button>
+                            </a>
+                        </form>
+                    </li>
+                    <li>
+                        <form action="/not_us" method="POST">
+                            <a class="menuLink">
+                                <button class = "menubutton" type="submit">About Us</button>
+                            </a>
+                        </form>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <br>
+        <div style = "position: absolute; top: 200px; left: 790px; font-size: 40px; font: Comic Sans">
+            Insert Informations
+        </div>
+        <table class="type03">
+            <tr>
+                <th scope="row">Insert_Time</th>
+                <td><p><%= Time %></p></td>
+            </tr>
+            <tr>
+                <th scope="row">Insert_Temperature</th>
+                <td><p><%= Temperature %></p></td>
+            </tr>
+            <tr>
+                <th scope="row">Insert_Rainfall</th>
+                <td><p><%= Rainfall %></p></td>
+            </tr>
+            <tr>
+                <th scope="row">Insert_Wind</th>
+                <td><p><%= Wind %></p></td>
+            </tr>
+            <tr>
+                <th scope="row">Insert_Humidity</th>
+                <td><p><%= Humidity %></p></td>
+            </tr>
+            <tr>
+                <th scope="row">Insert_Snow</th>
+                <td><p><%= Snow %></p></td>
+            </tr>
+        </table>
+    </body>
+</html>

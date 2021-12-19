@@ -1,0 +1,91 @@
+<!-- wirte.html -->
+
+<h4 class="container mt-4"><strong>글 작성 페이지</strong></h4>
+
+<div class="container mt-3">
+    <!-- method : 정보를 어떤 형태로 전달할건지 지정 -->
+    <form action="/semi_select" method="POST">
+        <button type="submit" class="btn btn-outline-secondary">Submit</button>
+    </form>
+</div>
+
+<div class="container mt-max">
+    <!-- method : 정보를 어떤 형태로 전달할건지 지정 -->
+    <form action="/max" method="POST">
+        <div class="form-group">
+            <label>지역</label>
+            <input type="text" class="form-control" name="local">
+        </div>
+
+        <div class="form-group">
+            <label>년도</label>
+            <input type="text" class="form-control" name="year">
+        </div>
+
+        <div class="form-group">
+            <label>월</label>
+            <input type="text" class="form-control" name="month">
+        </div>
+
+        <div class="form-group">
+            <label>일</label>
+            <input type="text" class="form-control" name="day">
+        </div>
+
+        <button type="submit" class="btn btn-outline-secondary">Max</button>
+    </form>
+</div>
+
+<div class="container mt-min">
+    <!-- method : 정보를 어떤 형태로 전달할건지 지정 -->
+    <form action="/min" method="POST">
+        <div class="form-group">
+            <label>지역</label>
+            <input type="text" class="form-control" name="local">
+        </div>
+
+        <div class="form-group">
+            <label>년도</label>
+            <input type="text" class="form-control" name="year">
+        </div>
+
+        <div class="form-group">
+            <label>월</label>
+            <input type="text" class="form-control" name="month">
+        </div>
+
+        <div class="form-group">
+            <label>일</label>
+            <input type="text" class="form-control" name="day">
+        </div>
+
+        <button type="submit" class="btn btn-outline-secondary">Min</button>
+    </form>
+</div>
+
+<div class="container mt-avg">
+    <!-- method : 정보를 어떤 형태로 전달할건지 지정 -->
+    <form action="/avg" method="POST">
+        <div class="form-group">
+            <label>지역</label>
+            <input type="text" class="form-control" name="local">
+        </div>
+
+        <div class="form-group">
+            <label>년도</label>
+            <input type="text" class="form-control" name="year">
+        </div>
+
+        <div class="form-group">
+            <label>월</label>
+            <input type="text" class="form-control" name="month">
+        </div>
+
+        <div class="form-group">
+            <label>일</label>
+            <input type="text" class="form-control" name="day">
+        </div>
+
+        <button type="submit" class="btn btn-outline-secondary">Avg</button>
+    </form>
+</div>

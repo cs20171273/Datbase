@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<style>
+    #input1 {
+    	width: 400px;
+        height: 70px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom : 3px solid #1B682C;
+        font-size: 20px;
+    }
+    #input2 {
+    	width: 100px;
+        height: 55px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom : 3px solid #1B682C;
+    }
+</style>
+
+<html>
+    <head>
+        <title>Forecast</title>
+        <style>
+            body {
+                height: 100vh;
+                background-image: url('/public/image/register.png');
+                background-repeat : no-repeat;
+                background-size : cover;
+            }
+        </style>
+        <link href="/public/stylesheet/mainpage.css" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+        <div style ="position: absolute; top:450px; left:1100px">
+            <form action="/register" method="POST">
+                <input id="input1" type="username" placeholder="username" name="username" />
+                <br>
+                <br>
+                <input id="input1" type="password" placeholder="password" name="password" />
+                <br>
+                <br>
+                <input id="input1" type="password" placeholder="password confirm" name="password_conform" />
+                <br>
+                <br>
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        
+    </body>
+</html>
